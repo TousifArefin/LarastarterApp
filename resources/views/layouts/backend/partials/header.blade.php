@@ -24,8 +24,8 @@
                                     <em class="icon ni ni-user-alt"></em>
                                 </div>
                                 <div class="user-info d-none d-md-block">
-                                    <div class="user-status">{{ Auth::user()->status }}</div>
-                                    <div class="user-name dropdown-indicator">{{ Auth::user()->name }}</div>
+                                    <div class="user-status"></div>
+                                    <div class="user-name dropdown-indicator"></div>
                                 </div>
                             </div>
                         </a>
@@ -33,11 +33,11 @@
                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                 <div class="user-card">
                                     <div class="user-avatar">
-                                        <span>{{ Auth::user()->name }}</span>
+                                        <span></span>
                                     </div>
                                     <div class="user-info">
-                                        <span class="lead-text">{{ Auth::user()->name }}</span>
-                                        <span class="sub-text">{{ Auth::user()->email }}</span>
+                                        <span class="lead-text"></span>
+                                        <span class="sub-text"></span>
                                     </div>
                                 </div>
                             </div>

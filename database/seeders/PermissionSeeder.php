@@ -51,7 +51,7 @@ class PermissionSeeder extends Seeder
         ]);
 
 
-        $moduleAppUser = Module::updateOrCreate(['name' => 'Role Mannagement']);
+        $moduleAppUser = Module::updateOrCreate(['name' => 'User Mannagement']);
         Permission::updateOrCreate([
             'module_id' => $moduleAppUser->id,
             'name' => 'Access User',
