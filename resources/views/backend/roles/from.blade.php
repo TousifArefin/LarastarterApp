@@ -11,7 +11,20 @@
                             <div class="nk-block-head">
                                 <div class="nk-block-between">
                                     <div class="nk-block-head-content">
-                                        <h3 class="nk-block-title page-title">Create Roles</h3>
+                                        <h3 class="nk-block-title page-title">{{ isset($role) ? 'Edit' : 'Create' }} Roles
+                                        </h3>
+                                    </div><!-- .nk-block-head-content -->
+                                    <div class="nk-block-head-content">
+                                        <div class="toggle-wrap nk-block-tools-toggle">
+                                            <div class="toggle-expand-content" data-content="pageMenu">
+                                                <ul class="nk-block-tools g-3">
+                                                    <li class="nk-block-tools-opt"><a href="{{ route('app.roles.index') }}"
+                                                            class="btn btn-danger"><em
+                                                                class="icon ni ni-reply"></em><span>Back</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div><!-- .nk-block-head-content -->
                                 </div><!-- .nk-block-between -->
                             </div>
@@ -20,6 +33,9 @@
                                     <form method="POST"
                                         action="{{ isset($role) ? route('app.roles.update', $role->id) : route('app.roles.store') }}">
                                         @csrf
+                                        @isset($role)
+                                            @method('PUT')
+                                        @endisset
                                         <div class="card-body">
                                             <h4 class="card-title">Manage Role</h4>
 
@@ -64,7 +80,12 @@
                                                                         <input type="checkbox" class="custom-control-input"
                                                                             id="permission-{{ $permission->id }}"
                                                                             name="permissions[]"
-                                                                            value="{{ $permission->id }}">
+                                                                            value="{{ $permission->id }}"
+                                                                            @isset($role)
+                                                                                @foreach ($role->permissions as $rPermission)
+                                                                                    {{ $permission->id = $rPermission->id ? 'checked' : '' }}
+                                                                                @endforeach
+                                                                            @endisset>
                                                                         <label for="permission-{{ $permission->id }}"
                                                                             class="custom-control-label">{{ $permission->name }}</label>
                                                                     </div>

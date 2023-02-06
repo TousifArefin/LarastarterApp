@@ -49,7 +49,7 @@
                                     <li><a href="html/user-profile-setting.html"><em
                                                 class="icon ni ni-setting-alt"></em><span>Account
                                                 Setting</span></a></li>
-                                    <li><a href="html/user-profile-activity.html"><em
+                                    <li><a href="{{ route('login') }}"><em
                                                 class="icon ni ni-activity-alt"></em><span>Login
                                                 Activity</span></a></li>
                                     <li><a class="dark-switch" href="#"><em

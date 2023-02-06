@@ -54,7 +54,7 @@
                                                             <span class="badge badge-danger">No permission found :(</span>
                                                         @endif
                                                     </td>
-                                                    <td>{{ $role->created_at->diffForHumans() }}</td>
+                                                    <td>{{ $role->updated_at->diffForHumans() }}</td>
                                                     <td>
                                                         <a href="{{ route('app.roles.edit', $role->id) }}"
                                                             class="btn btn-primary">Edit</a>
