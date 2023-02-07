@@ -7,6 +7,7 @@ use App\Models\Module;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class RoleController extends Controller
@@ -73,6 +74,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
+         Alert()->warning('Are You Sure','Lorem ipsum dolor sit amet.');
 
         $modules = Module::all();
         return view('backend.roles.from', compact('modules', 'role'));
